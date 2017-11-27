@@ -216,43 +216,58 @@
             <p class="draft-status"> <b>Draft state:</b> <a href="http://www.w3.org/TR/2016/CR-presentation-api-20160714/">
                 CR</a> / Stable </p>
             <p class="milestone">
-              <b>Expected completion:</b> Q4 2019 &mdash; With the possible
-              exception of the testing API noted in <a href="#test-suite">Test
-              suite</a> below, this Working Group does not anticipate further
-              changes to this specification. That said, known implementation
-              plans are tied to the availability of the
-              <a href="https://github.com/webscreens/openscreenprotocol">Open
-              Screen Protocol</a>, under incubation in the
-              <a href="http://www.w3.org/community/webscreens/">Second Screen
-              Community Group</a>. The Working Group does not expect to be able
-              to meet the <a href="#success-criteria">Success Criteria</a> for
-              the Presentation API in the meantime. This Working Group plans to
-              assess progress on the suite of protocols at the end of this
-              Charter, and to request re-chartering accordingly to finalize the
+              <b>Expected completion:</b> Q4 2019 &mdash; This Working Group
+              does not anticipate further changes to this specification. The
+              Working Group is awaiting satisfaction of
+              the <a href="#success-criteria">Success Criteria</a>, which
+              require two interoperable implementations of the Presentation API.
+            </p>
+
+            <p>
+              The <a href="https://github.com/webscreens/openscreenprotocol">
+              Open Screen Protocol</a>, under incubation in
+              the <a href="http://www.w3.org/community/webscreens/"> Second
+              Screen Community Group</a>, is one proposed basis for
+              interoperability, and two implementations based on it would
+              satisfy those criteria. The charter timeline provides additional
+              time for interoperable implementations to be completed and the
+              Success Criteria to be met.
+            </p>
+
+            <p>
+              This Working Group plans to assess progress on interoperability
+              and implementation status regularly, and to request re-chartering
+              according to progress on meeting success criteria for the
               specification.
             </p>
           </dd>
-          <dt> Presentation API Level 2 </dt>
+          <dt id="level-2"> Presentation API Level 2 </dt>
           <dd>
             <p> A second version of the Presentation API that integrates
-              features which the Working Group resolved not to include in the
-              first version in the interest of time, feedback from Web
-              developers on the first version, as well as stable features
-              matured in the <a href="http://www.w3.org/community/webscreens/">Second
-                Screen Community Group</a>, provided they fall within the scope
-              of this Working Group. The Working Group's issue tracker lists <a
-                href="https://github.com/w3c/presentation-api/issues?q=label%3Av2">
-                examples of features</a> that may be integrated. </p>
-            <p class="draft-status"> <b>Draft state:</b> No draft (builds on
-              the CR) / Exploring </p>
-            <p class="milestone"> <b>Expected completion:</b> Progress on this
-              specification depends on the adoption of the first version of the
-              Presentation API and on the outcomes of discussions within the
-              companion <a href="http://www.w3.org/community/webscreens/">Second
-                Screen Community Group</a>. This Working Group does not expect
-              to complete this specification by the end of this charter and may
-              request to be re-chartered to finalize this work, possibly with a
-              different scope. </p>
+              features the Working Group resolved not to include in the first
+              version in the interest of time and feedback from Web developers
+              on the first version. New features that fall within the scope of
+              this Working Group may first be incubated and matured in an
+              appropriate Community Group.
+            </p>
+            <p>
+              The Working Group's issue tracker lists
+              <a href="https://github.com/w3c/presentation-api/issues?q=label%3Av2">
+              examples of features</a> that may be integrated.  An example of a
+              new feature is a
+              <a href="https://github.com/w3c/presentation-api/issues/440">Testing
+              API</a> that will allow automation of the
+              <a href="#test-suite">test suites</a> for the Presentation API and
+              Remote Playback API.
+            </p>
+            <p class="draft-status">
+              <b>Draft state:</b> No draft (builds on the CR) / Exploring
+            </p>
+            <p class="milestone"> <b>Expected completion:</b> This Working Group
+              does not expect to complete new specifications by the end of this
+              charter and may request to be re-chartered to finalize this work,
+              possibly with a different scope.
+            </p>
           </dd>
           <dt> <a href="http://www.w3.org/TR/remote-playback/">Remote Playback
               API</a> </dt>
@@ -263,15 +278,10 @@
             <p class="draft-status"> <b>Draft state:</b> <a href="http://www.w3.org/TR/2017/CR-remote-playback-20171019/">
                 CR</a> / Stable </p>
             <p class="milestone">
-              <b>Expected completion:</b> Q4 2018 &mdash; With the possible
-              exception of the testing API noted in <a href="#test-suite">Test
-              suite</a> below, this Working Group does not anticipate further
-              changes to this specification. As for the Presentation API,
-              progress on the
-              <a href="https://github.com/webscreens/openscreenprotocol">Open
-              Screen Protocol</a> will benefit this specification, but this
-              Working Group still expects to publish the Remote Playback API as
-              a final Recommendation in parallel to protocol discussions.
+              <b>Expected completion:</b> Q4 2018 &mdash; This Working Group
+              does not anticipate further changes to this specification. The
+              Working Group plans to publish the Remote Playback API as a final
+              Recommendation when the Success Criteria are met.
             </p>
           </dd>
         </dl>
@@ -280,23 +290,29 @@
         <h3 id="other-deliverables"> Other Deliverables </h3>
         <dl>
           <dt id="test-suite"> Test suite </dt>
-          <dd> A comprehensive test suite for all features of a specification is
-            necessary to assess the specification's robustness, consistency, and
-            implementability, and to promote interoperability between user
-            agents. Therefore, each specification must have a companion test
-            suite, which should be completed before transition to Candidate
-            Recommendation, and which must be completed with an implementation
-            report before transition to Proposed Recommendation. Additional
-            tests may be added to the test suite at any stage of the
-            Recommendation track, and the maintenance of an implementation
-            report is encouraged. </dd>
-          <dd> Additionally, this Working Group will seek to define a testing
-            API for the Presentation API and for the Remote Playback API
-            with a view to improve test automation, as well as to allow
-            developers to test their own web applications that make use of the
-            above-mentioned APIs. Depending on progress, this Working Group may
-            choose to include the testing APIs in the existing drafts, or to
-            define them in Level 2 versions of the specifications. </dd>
+          <dd>
+            <p>
+              A comprehensive test suite for all features of a specification is
+              necessary to assess the specification's robustness, consistency, and
+              implementability, and to promote interoperability between user
+              agents. Therefore, each specification must have a companion test
+              suite, which should be completed before transition to Candidate
+              Recommendation, and which must be completed with an implementation
+              report before transition to Proposed Recommendation. Additional
+              tests may be added to the test suite at any stage of the
+              Recommendation track, and the maintenance of an implementation
+              report is encouraged.
+            </p>
+            <p>
+              Additionally, this Working Group will improve test automation for
+              the Presentation API and Remote Playback API test suites. This
+              will be done through the adoption of a Testing API, developed as a
+              <a href="#level-2">Presentation API Level 2 specification</a>. The
+              Testing API will also allow developers to use automation to test
+              their own Web applications that make use of the above-mentioned
+              APIs.
+            </p>
+          </dd>
           <dt> Use cases and requirements </dt>
           <dd> The Working Group is strongly encouraging the participants to
             create and maintain a use cases and requirements document for each
@@ -363,7 +379,8 @@
       <div class="dependencies">
         <h2 id="coordination"> Dependencies and Liaisons </h2>
         <h3 id="dependencies"> Dependencies </h3>
-        <p> The initial draft of the Presentation API was prepared by the <a href="http://www.w3.org/community/webscreens/">Second
+        <p> The initial draft of the Presentation API was prepared by the
+          <a href="http://www.w3.org/community/webscreens/">Second
             Screen Community Group</a>. Upon approval of the Working Group, the
           Community Group ceased its work on the Presentation API
           specification. The Community Group is currently focused on incubating
@@ -373,7 +390,7 @@
           is not clear enough how to proceed for it to be a work item for a
           Working Group. The Community Group is only one possible source for
           work under future Working Group charters, but can serve to do initial
-        exploration for some future work items. </p>
+          exploration for some future work items. </p>
         <p> The specifications produced by this Working Group adhere to the
           web's security model defined in the HTML specification published by
           the Web Platform Working Group. </p>
