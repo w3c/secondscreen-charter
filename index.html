@@ -41,7 +41,7 @@
           </tr>
           <tr>
             <th rowspan="1" colspan="1"> End date </th>
-            <td rowspan="1" colspan="1"> 31 December 2018 </td>
+            <td rowspan="1" colspan="1"> 31 December 2019 </td>
           </tr>
           <tr>
             <th rowspan="1" colspan="1"> Charter extension </th>
@@ -181,6 +181,8 @@
           <li>Negotiation of a media streaming session between devices</li>
           <li>Network transport of media data</li>
         </ul>
+        <p> Input methods, such as using a TV remote as a pointer or clicker,
+          are out of scope of the Working Group. </p>
         <p> To facilitate interoperability among user agents and display devices
           and encourage adoption of the API, the group may informatively
           reference existing suites of protocols, either directly in the
@@ -241,13 +243,6 @@
               charter timeline provides additional time for Open Screen Protocol
               implementations to be completed and the Success Criteria to be
               met.
-            </p>
-
-            <p>
-              This Working Group plans to meet regularly to assess progress on
-              meeting Success Criteria for the Presentation API and
-              interoperability based on the Open Screen Protocol, and request
-              rechartering as needed.
             </p>
 
             <p>
@@ -369,7 +364,9 @@
           Community Group ceased its work on the Presentation API
           specification. The Community Group is currently focused on incubating
           the <a href="https://github.com/webscreens/openscreenprotocol">Open
-          Screen Protocol</a> for the APIs defined in this Working Group. The
+          Screen Protocol</a>, and open set of network protocols that includes
+          authentication and security mechanisms, for the APIs defined in this
+          Working Group. The
           Community Group may also work on other related deliverables where it
           is not clear enough how to proceed for it to be a work item for a
           Working Group. The Community Group is only one possible source for
@@ -434,9 +431,6 @@
           API to be implemented on top of widely deployed attachment methods for
           connected displays: </p>
         <dl>
-          <dt><a href="http://www.dlna.org/home">DLNA</a></dt>
-          <dd> The Digital Living Network Alliance references home network
-            protocols that secondary displays may support. </dd>
           <dt><a href="http://www.ietf.org" id="ietf">IETF</a></dt>
           <dd> The IETF develops home network protocols that secondary displays
             may support. </dd>
@@ -477,29 +471,49 @@
         </div>
         <div class="decisions">
           <h2 id="decisions"> Decision Policy </h2>
-          <p> As explained in the W3C Process Document (<a href="http://www.w3.org/2015/Process-20150901/#Consensus">section
-              3.3</a>), this group will seek to make decisions when there is
-            consensus and with due process. The expectation is that typically,
-            an editor or other participant makes an initial proposal, which is
-            then refined in discussion with members of the group and other
-            reviewers, and consensus emerges with little formal voting being
-            required. However, if a decision is necessary for timely progress,
-            but consensus is not achieved after careful consideration of the
-            range of views presented, the Chairs should put a question out for
-            voting within the group (allowing for remote asynchronous
-            participation -- using, for example, email and/or web-based survey
-            techniques) and record a decision, along with any objections. The
-            matter should then be considered resolved unless and until new
-            information becomes available. </p>
-          <p> Any resolution taken in a face-to-face meeting or teleconference
-            is to be considered provisional until 10 working days after the
-            publication of the resolution in draft minutes sent to the working
-            groups mailing list. If no objections are raised on the mailing list
-            within that time, the resolution will be considered to have
-            consensus as a resolution of the Working Group. </p>
-          <p> This charter is written in accordance with <a href="http://www.w3.org/Consortium/Process/policies#Votes">Section
-              3.4, Votes</a> of the W3C Process Document and includes no voting
-            procedures beyond what the Process Document requires. </p>
+          <p>
+            This group will seek to make decisions through consensus and due
+            process, per the
+            <a href="https://www.w3.org/2017/Process-20170301/#Consensus">W3C
+            Process Document (section 3.3)</a>. Typically, an editor or other
+            participant makes an initial proposal, which is then refined in
+            discussion with members of the group and other reviewers, and
+            consensus emerges with little formal voting being required.
+          </p>
+          <p>
+            However, if a decision is necessary for timely progress, but
+            consensus is not achieved after careful consideration of the range
+            of views presented, the Chairs may call for a group vote, and
+            record a decision along with any objections.
+          </p>
+          <p>
+            To afford asynchronous decisions and organizational deliberation,
+            any resolution (including publication decisions) taken in a
+            face-to-face meeting or teleconference will be considered
+            provisional.
+          </p>
+          <p>
+            A call for consensus (CfC) will be issued for all resolutions (for
+            example, via email and/or web-based survey), with a response period
+            from one week to 10 working days, depending on the chair's
+            evaluation of the group consensus on the issue.
+          </p>
+          <p>
+            If no objections are raised on the mailing list by the end of the
+            response period, the resolution will be considered to have
+            consensus as a resolution of the Working Group.
+          </p>
+          <p>
+            All decisions made by the group should be considered resolved
+            unless and until new information becomes available, or unless
+            reopened at the discretion of the Chairs or the Director.
+          </p>
+          <p>
+            This charter is written in accordance with the
+            <a href="https://www.w3.org/Consortium/Process/policies#Votes">W3C
+            Process Document (Section 3.4, Votes)</a>, and includes no voting
+            procedures beyond what the Process Document requires.
+          </p>
         </div>
         <div class="patent">
           <h2 id="patentpolicy"> Patent Policy </h2>
@@ -574,12 +588,13 @@
               <tr>
                 <th> <a href="#">Rechartered</a> </th>
                 <td> <span class="todo">15 January 2018</span> </td>
-                <td> 31 December 2018 </td>
+                <td> 31 December 2019 </td>
                 <td>
                   <ul>
                     <li>Completion dates updated to reflect current
                       implementation plans, dependency on Open Screen Protocol noted</li>
-                    <li>Intent to work on testing APIs noted in Test suite section</li>
+                    <li>Dropped second version of the Presentation API. Intent to re-include it later on after incubation and completion of current version noted</li>
+                    <li>Intent to work on testing APIs after incubation in a Community Group noted in Test suite section</li>
                     <li>Dropped reference to the discontinued Network Service Discovery API which was developed by the Device and Sensors Working Group</li>
                     <li>Updated boilerplate text using current charter template</li>
                     <li>Added "test as you commit" approach</li>
