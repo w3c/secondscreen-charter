@@ -26,9 +26,11 @@
       </p>
       <h1 id="title"><span class="todo">[PROPOSED]</span> Second Screen Working Group Charter </h1>
       <p class="todo"><strong>Warning:</strong> This document has no official status. It is a draft charter for discussion within the Second Screen WG and the W3C Advisory Committee.</p>
-      <p class="mission"> The <strong>mission</strong> of the <a href="https://www.w3.org/2014/secondscreen/">Second
-          Screen Working Group</a> is to provide specifications that enable web
-        pages to use secondary screens to display web content. </p>
+      <p class="mission"> The <strong>mission</strong> of
+          the <a href="https://www.w3.org/2014/secondscreen/">Second Screen
+          Working Group</a> is to provide specifications that enable web pages
+          to use secondary screens (presentation displays) to display web
+          content. </p>
       <div class="noprint">
         <p class="join"> <a href="https://www.w3.org/2004/01/pp-impl/74168/join">Join
             the Second Screen Working Group</a> </p>
@@ -37,11 +39,11 @@
         <tbody>
           <tr id="Duration">
             <th rowspan="1" colspan="1"> Start date </th>
-            <td rowspan="1" colspan="1"> <span class="todo"> 15 January 2018 </span> </td>
+            <td rowspan="1" colspan="1"> <span class="todo"> 1 January 2020 </span> </td>
           </tr>
           <tr>
             <th rowspan="1" colspan="1"> End date </th>
-            <td rowspan="1" colspan="1"> 31 December 2019 </td>
+            <td rowspan="1" colspan="1"> 31 December 2021 </td>
           </tr>
           <tr>
             <th rowspan="1" colspan="1"> Charter extension </th>
@@ -62,89 +64,81 @@
               Face-to-face: we will meet during the W3C's annual Technical
               Plenary week; other additional F2F meetings may be scheduled (up
               to 2 per year) <br />
-              IRC: active participants, particularly editors, regularly use the
+              IRC: active participants use the
               <a href="irc://irc.w3.org:6665/#webscreens">#webscreens</a> W3C
-              IRC channel </td>
+              IRC channel during F2F meetings and teleconferences. </td>
           </tr>
         </tbody>
       </table>
       <div class="goals">
         <h2 id="goals"> Goals </h2>
-        <p> Web content is available on an ever expanding array of devices
+        <p> Web applications are available on an ever expanding array of devices
           including ebook readers, phones, tablets, laptops, auto displays, and
-          electronic billboards. These devices have a variety of display
-          screens. There are also a variety of mechanisms that allow these
-          devices to use secondary display screens available in the local
-          environment, attached by wired connections or remotely with wireless,
-          peer-to-peer media. </p>
+          electronic signs.  There are also a variety of mechanisms that allow
+          these devices to use secondary audio and video presentation devices
+          available in the local environment, attached by wired connections or
+          remotely with wireless, peer-to-peer media. </p>
         <p> Common attachment methods include video ports like VGA, DisplayPort
-          or HDMI, or wirelessly through Miracast, WiDi, or AirPlay. Wireless
-          screens may be available on a local area network or over the Internet,
-          brokered by a cloud service. A device like a laptop could provide a
-          screen for a smaller device like a phone. </p>
-        <p> For many of these techniques the operating system hides how the
-          screen is attached and provides ways for native applications to use
-          the screens. Native applications on an operating system can easily use
-          these additional screens without having to know how they are attached
-          to the device. At this point, however, there is no way for a web page
-          to take advantage of these available secondary displays. </p>
+          or HDMI, or wirelessly through Miracast, WiDi, AirPlay, Bluetooth, and
+          Google Cast.  Wireless presentation displays may be available on a
+          local area network, or over the Internet (brokered by a cloud
+          service).  In addition to displays like monitors and TVs, wireless
+          speakers can serve as secondary devices for rendering Web content.
+          General purpose PCs and laptops can also serve as secondary
+          presentation displays. </p>
+        <p> For many of these displays, the operating system hides how the
+          display is attached and provides ways for native applications to
+          render media on them.  Native applications can easily use additional
+          presentation displays without having to know the details of the
+          connection technology. </p>
         <p> The Second Screen Working Group aims at defining simple APIs that
           allow web applications to show and control web content on one or more
-          secondary displays. </p>
+          presentation displays and speakers. </p>
       </div>
       <div class="scope">
         <h2 id="scope"> Scope </h2>
-        <p> The scope of this Working Group is to define an API that allows a
-          web application to request display of web content on a connected
+        <p> The scope of this Working Group is to define APIs that allow a web
+          application to request display of web content on a nearby presentation
           display, with a means to communicate with and control the web content
           from the initiating page and other authorized pages. Pages may become
-          authorized to control the web content by virtue of sharing an origin
-          with the originating page, explicit user permission, or other
-          facilities provided by the user agent. The API will hide the details
-          of the underlying connection technologies and use familiar, common web
-          technologies for messaging between the authorized pages and the web
-          content shown on the secondary display. The web content may comprise
-          HTML documents, web media types such as images, audio, video, or
-          application-specific media, depending on the capabilities of the
-          secondary display for rendering the media. Application-specific media
-          includes that whose type is known to the controlling page and the
-          connected display, but not necessarily a generic HTML user agent. </p>
-        <p> The API will provide a means to identify whether requesting display
-          on second screens is likely to be successful, i.e. whether at least
-          one secondary screen is available for display. </p>
-        <p> The API is agnostic with regard to the display connection used, and
-          also works with display connections that support video only, for
-          example, a TV connected to a laptop with an HDMI connection. In such a
-          usage scenario, the web content displayed on a connected display must
-          be rendered and converted to video before it is sent to a second
-          screen. The user agent may use whatever means the operating system
-          provides to prepare and send the video to a second screen. Any
-          interaction between the authorized web pages and the content displayed
-          on a secondary screen would happen within the bounds of the initiating
-          device since both the pages and the content are rendered on that same
-          device, and only a video representation is sent to the second screen.
+          authorized to control the displayed web content through explicit user
+          permission, a token provided by the API, or other facilities provided
+          by the user agent. </p>
+        </p> The APIs will hide the details of the underlying connection
+          technologies and use familiar, common APIs for messaging among
+          authorized pages and the web content shown on the presentation
+          display.  Web content may comprise an HTML document; parts of an HTML
+          document; web media types such as images, audio, video; or
+          application-specific media.  The presentation of application-specific
+          media is known to the controlling page and the presentation display,
+          but not necessarily to a generic HTML user agent. </p>
+        <p> For a requested piece of web content, the user agent is responsible
+          for determining which presentation displays are compatible with that
+          content.  The API will provide the means for the web application to
+          identify whether rendering the web content is likely to be successful,
+          i.e. whether at least one presentation display is available that is
+          capable of rendering the web content.  </p>
+        <p> The API is agnostic with regard to the display technology used. The
+          user agent may ask the presentation display to render the web content,
+          or the user agent may render the web content itself and send the
+          resulting audio and video to the presentation display using whatever
+          means the operating system provides.  From the web application's point
+          of view, which device is responsible for rendering the web content is
+          an implementation detail. </p>
+        <p> Presenting web content on a presentation display creates a
+          presentation connection between the web application and the web
+          content.  Web applications should be able to create multiple
+          presentation connections to control web content shown on multiple
+          presentation displays.  Some web content, such as HTML5 documents, can
+          be controlled from multiple web applications simultaneously.
+          Synchronization of web content among multiple connections may be
+          possible, but is not defined by the specifications in this group.
         </p>
-        <p> Alternatively, if the second screen device understands some other
-          means of transmitting content to a display and a means of two-way
-          message passing, the web content can be rendered by the remote device.
-          In this scenario, a URL to the content to be displayed is sent to the
-          secondary display to be rendered there. Because the content is
-          rendered separately from the initiating user agent, pages hosted by
-          other user agents may be authorized to control the remotely rendered
-          content at the same time. </p>
-        <p> For a requested piece of web content, how and by which device the
-          content is rendered is an implementation detail. The user agent is
-          responsible for determining which secondary displays are compatible
-          with the content that is requested to be shown through the API. </p>
-        <p> Sending content to a connected display creates a presentation
-          session. Applications can create multiple presentation sessions to
-          control multiple displays, although synchronization between them is
-          not currently supported by the API. </p>
         <p> The specifications produced by this Working Group will include
           security and privacy considerations. Specifically, the user must
           always be in control of privacy-sensitive information that may be
           conveyed through the APIs, such as the visibility or access to
-          secondary displays. </p>
+          presentation displays, or the URLs of the web content to be presented. </p>
         <p> Members of the Working Group should review other Working Groups'
           deliverables that are identified as being relevant to the Working
           Group's mission. </p>
@@ -157,44 +151,40 @@
           independent implementations should be demonstrated. Interoperable user
           agents hosting the same Presentation API web application should be
           able to render the same content with the same functionality on
-          supported secondary displays that are compatible with the content to
+          supported presentation displays that are compatible with the content to
           render. </p>
         <h3 id="out-of-scope"> Out of Scope </h3>
         <p> The specifications defined by this Working Group abstract away the
           means of connecting and different connection technologies. For
           example, the following are out of scope: </p>
         <ul>
-          <li>Lower level APIs that expose features of different connection
-            technologies </li>
-          <li>How second screens are connected to the primary device (e.g. Video
+          <li>Lower level APIs that expose features of existing connection
+            technologies. </li>
+          <li>How presentation displays are connected to the primary device (e.g. Video
             Port, HDMI, WiDi, Miracast, AirPlay) </li>
           <li>How the user agent prepares and sends the screen contents to the
-            second screen </li>
+            presentation display. </li>
         </ul>
-        <p> This Working Group will not define or mandate network protocols for
-          sharing content between user agents and secondary displays. For
-          example, the following are out of scope: </p>
+        <p> This Working Group will not mandate network protocols for sharing
+          web content between user agents and presentation displays. 
+          As such the following are out of scope for the Working Group:
         <ul>
-          <li>Discovery of wireless secondary displays by the primary user agent</li>
+          <li>Discovery of wireless presentation displays by the primary user agent</li>
           <li>Establishment of a messaging channel between the two parties,
             including message addressing, security and authentication</li>
           <li>Negotiation of a media streaming session between devices</li>
           <li>Network transport of media data</li>
         </ul>
+        Instead, the network protocol to implement the Working Group APIs is
+        being incubated as
+        the <a href="https://webscreens.github.io/openscreenprotocol/"> Open
+        Screen Protocol</a> in
+        the <a href="http://www.w3.org/community/webscreens/"> Second Screen
+        Community Group</a>.  The Working Group will informatively reference the
+        Open Screen Protocol in its API specifications.
+        </p>
         <p> Input methods, such as using a TV remote as a pointer or clicker,
           are out of scope of the Working Group. </p>
-        <p> To facilitate interoperability among user agents and display devices
-          and encourage adoption of the API, the group may informatively
-          reference existing suites of protocols, either directly in the
-          Presentation API deliverable or in a non-normative companion Note.
-          This Working Group will monitor the outcomes of related discussions in
-          the <a href="http://www.w3.org/community/webscreens/">Second Screen
-            Community Group</a> in particular. </p>
-        <p> Content mirroring, whereby a web application requests display of the
-          content shown in its own browsing context (i.e., page) on a secondary
-          display, is out of scope. If a web application requests display of
-          itself (same URL) on a connected display, a new browsing context will
-          be created with that URL and rendered on the connected display. </p>
         <p> This Working Group will not define or mandate any video or audio
           codecs. </p>
       </div>
@@ -224,7 +214,7 @@
             <p class="draft-status"> <b>Draft state:</b> <a href="http://www.w3.org/TR/2016/CR-presentation-api-20160714/">
                 CR</a> / Stable </p>
             <p class="milestone">
-              <b>Expected completion:</b> Q4 2019 &mdash; The Working Group is
+              <b>Expected completion:</b> Q4 2020 &mdash; The Working Group is
               awaiting satisfaction of the <a href="#success-criteria">Success
               Criteria</a>, which require two interoperable implementations of
               the Presentation API.  The Working Group will also await
@@ -246,15 +236,13 @@
             </p>
 
             <p>
-              A second version of the Presentation API that integrates features
-              the Working Group resolved not to include in the first version in
-              the interest of time, and also feedback from Web developers on the
-              first version, will first be incubated and matured in an
-              appropriate Community Group. This Working Group expects to bring
-              such features out of incubation through rechartering, when the
-              criteria for moving the current Presentation API to Proposed
-              Recommendation have been met.
+              Additional features will be considered for the Presentation API to
+              align it with the work on the Open Screen Protocol, based on
+              implementation experience with that protocol.  All API changes
+              will be incubated in the Second Screen Community Group before
+              being considered in the Working Group.
             </p>
+            
           </dd>
           <dt> <a href="http://www.w3.org/TR/remote-playback/">Remote Playback
               API</a> </dt>
@@ -265,11 +253,20 @@
             <p class="draft-status"> <b>Draft state:</b> <a href="http://www.w3.org/TR/2017/CR-remote-playback-20171019/">
                 CR</a> / Stable </p>
             <p class="milestone">
-              <b>Expected completion:</b> Q4 2018 &mdash; This Working Group
+              <b>Expected completion:</b> Q4 2020 &mdash; This Working Group
               does not anticipate further changes to this specification. The
               Working Group plans to publish the Remote Playback API as a final
               Recommendation when the Success Criteria are met.
             </p>
+
+            <p>
+              Additional features will be considered for the Remote Playback API
+              to align it with the work on the Open Screen Protocol, based on
+              implementation experience with that protocol.  All API changes
+              will be incubated in the Second Screen Community Group before
+              being considered in the Working Group.
+            </p>
+
           </dd>
         </dl>
         <p> The Working Group may decide to group the API functions in one or
@@ -300,15 +297,23 @@
             </p>
           </dd>
           <dt> Use cases and requirements </dt>
-          <dd> The Working Group is strongly encouraging the participants to
-            create and maintain a use cases and requirements document for each
-            specification. </dd>
+          <dd>
+            <p>
+              The Working Group is strongly encouraging the participants to
+              create and maintain a use cases and requirements document for each
+              specification.
+            </p>
+          </dd>
           <dt> Implementation guidelines </dt>
-          <dd> To facilitate interoperability among user agents and display
-            devices and encourage adoption of the API, the group may provide
-            informative guidelines for implementors, either directly as
-            informative notes within the Presentation API or in a separate
-            non-normative group Note. </dd>
+          <dd>
+            <p>
+              To facilitate interoperability among user agents and display
+              devices and encourage adoption of the API, the group may provide
+              informative guidelines for implementors, either directly as
+              informative notes within the Presentation API or in a separate
+              non-normative group Note.
+            </p>
+          </dd>
         </dl>
         <p> Other non-normative documents may be created for each specification,
           for example: </p>
@@ -342,15 +347,15 @@
               <th rowspan="1" colspan="1"> Presentation API </th>
               <td class="WD1" rowspan="1" colspan="1"> - </td>
               <td class="CR" rowspan="1" colspan="1"> - </td>
-              <td class="PR" rowspan="1" colspan="1"> <em>Q4 2019</em> </td>
-              <td class="REC" rowspan="1" colspan="1"> <em>Q4 2019</em> </td>
+              <td class="PR" rowspan="1" colspan="1"> <em>Q4 2021</em> </td>
+              <td class="REC" rowspan="1" colspan="1"> <em>Q4 2021</em> </td>
             </tr>
             <tr>
               <th rowspan="1" colspan="1"> Remote Playback API </th>
               <td class="WD1" rowspan="1" colspan="1"> - </td>
               <td class="CR" rowspan="1" colspan="1"> - </td>
-              <td class="PR" rowspan="1" colspan="1"> Q4 2018 </td>
-              <td class="REC" rowspan="1" colspan="1"> Q4 2018 </td>
+              <td class="PR" rowspan="1" colspan="1"> Q4 2020 </td>
+              <td class="REC" rowspan="1" colspan="1"> Q4 2020 </td>
             </tr>
           </tbody>
         </table>
@@ -388,12 +393,11 @@
               Second Screen Community Group </a></dt>
           <dd> This group developed the initial version of the Presentation API
             and focuses on enabling interoperability among implementations of
-            the Presentation API, encouraging implementation of the Presentation
-            API by browser vendors and establishing complementary specifications
-            for the Presentation API. The Community Group incubates the
+            the second screen APIs, encouraging implementation of the the APIs
+            by browser vendors and establishing complementary specifications for
+            the APIs. The Community Group incubates the
             <a href="https://github.com/webscreens/openscreenprotocol">Open
             Screen Protocol</a> for the APIs defined in this Working Group.
-            This work on protocols may warrant changes in the Presentation API.
           </dd>
           <dt><a id="wai" href="http://www.w3.org/WAI/"> </a><a href="http://www.w3.org/WAI/APA/">Accessible
               Platform Architectures (APA) Working Group</a> </dt>
@@ -421,24 +425,24 @@
               Communications Working Group </a></dt>
           <dd> This group defines relevant or potentially relevant
             specifications for establishing peer-to-peer communication channels
-            and for extending the Presentation API to support out-of-scope
-            features such as content mirroring. </dd>
+            between web applications.
+          </dd>
         </dl>
         <h3 id="external-groups"> External Groups </h3>
-        <p> The Presentation API does not have strong dependencies on any given
-          set of protocols. The following is a tentative list of external bodies
-          the Working Group should collaborate with to allow the Presentation
-          API to be implemented on top of widely deployed attachment methods for
-          connected displays: </p>
+        <p> While the Presentation API does not have a direct dependency on any
+          given set of protocols, the following is a tentative list of external
+          bodies the Working Group should collaborate with to allow the
+          Presentation API to be implemented on top of widely deployed
+          attachment methods for connected displays: </p>
         <dl>
           <dt><a href="http://www.ietf.org" id="ietf">IETF</a></dt>
-          <dd> The IETF develops home network protocols that secondary displays
+          <dd> The IETF develops home network protocols that presentation displays
             may support. </dd>
           <dt><a href="http://openconnectivity.org/">Open Connectivity Foundation</a></dt>
-          <dd> The Open Connectivity Foundation develops home network protocols that secondary
+          <dd> The Open Connectivity Foundation develops home network protocols that presentation
             displays may support, including the UPnP suite of protocols. </dd>
           <dt><a href="http://www.wi-fi.org/">Wi-Fi Alliance</a></dt>
-          <dd> The Wi-Fi Alliance develops home network protocols that secondary
+          <dd> The Wi-Fi Alliance develops home network protocols that presentation
             displays may support. </dd>
         </dl>
         <div class="participation">
