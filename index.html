@@ -91,20 +91,27 @@
           render media on them.  Native applications can easily use additional
           presentation displays without having to know the details of the
           connection technology. </p>
-        <p> The Second Screen Working Group aims at defining simple APIs that
-          allow web applications to show and control web content on one or more
-          presentation displays and speakers. </p>
+        <p> The Second Screen Working Group aims at defining simple APIs and an
+          open suite of network protocols that allow web applications to show
+          and control web content on one or more presentation displays and
+          speakers. </p>
       </div>
       <div class="scope">
         <h2 id="scope"> Scope </h2>
-        <p> The scope of this Working Group is to define APIs that allow a web
+        <p> The scope of this Working Group is to define:</p>
+        <ul>
+          <li>APIs that allow a web
           application to request display of web content on a nearby presentation
           display, with a means to communicate with and control the web content
-          from the initiating page and other authorized pages. Pages may become
-          authorized to control the displayed web content through explicit user
-          permission, a token provided by the API, or other facilities provided
-          by the user agent. </p>
-        </p> The APIs will hide the details of the underlying connection
+          from the initiating page and other authorized pages;</li>
+          <li>A suite of network protocols that allows user agents to implement
+          the APIs in an interoperable fashion for browsers and presentation
+          displays connected via the same local area network.</li>
+        </ul>
+        <p> Pages may become authorized to control the displayed web content
+          through explicit user permission, a token provided by the API, or
+          other facilities provided by the user agent. The APIs will hide the
+          details of the underlying connection
           technologies and use familiar, common APIs for messaging among
           authorized pages and the web content shown on the presentation
           display.  Web content may comprise an HTML document; parts of an HTML
@@ -134,6 +141,23 @@
           Synchronization of web content among multiple connections may be
           possible, but is not defined by the specifications in this group.
         </p>
+        <p> The suite of network protocols will cover required steps for two
+          user agents to implement the APIs: discovery, authentication,
+          transport, and messaging (including API control messages and messages
+          for streaming media between agents). The suite will reuse and
+          configure existing IETF protocols for each of these steps. This
+          Working Group will work with the IETF to assess whether parts of the
+          protocol suite may apply to broader scenarios than the ones envisioned
+          for the APIs. If that is the case, those parts will be further
+          developed in the IETF. </p>
+        <p> This Working Group will not mandate network protocols for sharing
+          web content between user agents and presentation displays. The APIs
+          will informatively reference the protocol suite. </p>
+        <p> The specifications produced by this Working Group will include
+          security and privacy considerations. Specifically, the user must
+          always be in control of privacy-sensitive information that may be
+          conveyed through the APIs, such as the visibility or access to
+          presentation displays, or the URLs of the web content to be presented. </p>
         <p> Members of the Working Group should review other Working Groups'
           deliverables that are identified as being relevant to the Working
           Group's mission. </p>
@@ -143,30 +167,24 @@
           example, the following are out of scope: </p>
         <ul>
           <li>Lower level APIs that expose features of existing connection
-            technologies. </li>
+            technologies;</li>
           <li>How presentation displays are connected to the primary device (e.g. Video
-            Port, HDMI, WiDi, Miracast, AirPlay) </li>
+            Port, HDMI, WiDi, Miracast, AirPlay);</li>
           <li>How the user agent prepares and sends the screen contents to the
-            presentation display. </li>
+            presentation display.</li>
         </ul>
-        <p> This Working Group will not mandate network protocols for sharing
-          web content between user agents and presentation displays. 
-          As such the following are out of scope for the Working Group:
+        <p> This Working Group will reuse and configure existing network
+          protocols to create an open suite of network protocols suitable for
+          the APIs. As such, the following are out of scope for the Working
+          Group: </p>
         <ul>
-          <li>Discovery of wireless presentation displays by the primary user agent</li>
-          <li>Establishment of a messaging channel between the two parties,
-            including message addressing, security and authentication</li>
-          <li>Negotiation of a media streaming session between devices</li>
-          <li>Network transport of media data</li>
+          <li>Any new feature in existing IETF protocols normatively referenced
+            by the suite of network protocols;</li>
+          <li>Any new protocol for discovery, authentication, transport and
+            messaging;</li>
+          <li>Any protocol not required to implement the APIs developed by this
+            Working Group.</li>
         </ul>
-        Instead, the network protocol to implement the Working Group APIs is
-        being incubated as
-        the <a href="https://webscreens.github.io/openscreenprotocol/"> Open
-        Screen Protocol</a> in
-        the <a href="https://www.w3.org/community/webscreens/"> Second Screen
-        Community Group</a>.  The Working Group will informatively reference the
-        Open Screen Protocol in its API specifications.
-        </p>
         <p> Input methods, such as using a TV remote as a pointer or clicker,
           are out of scope of the Working Group. </p>
         <p> This Working Group will not define or mandate any video or audio
@@ -203,9 +221,7 @@
 
             <p>
               The <a href="https://github.com/webscreens/openscreenprotocol">
-              Open Screen Protocol</a>, under incubation in
-              the <a href="https://www.w3.org/community/webscreens/"> Second
-              Screen Community Group</a>, will be the basis for demonstrating
+              Open Screen Protocol</a> will be the basis for demonstrating
               interoperability between browsers and devices.  Two
               implementations based on it would satisfy those criteria. The
               charter timeline provides additional time for Open Screen Protocol
@@ -269,9 +285,23 @@
               Group before being considered in the Working Group.
             </p>
           </dd>
+          <dt> <a href="https://webscreens.github.io/openscreenprotocol/">Open Screen Protocol</a> </dt>
+          <dd>
+            <p>
+              A suite of network protocols that allow user agents to implement
+              the Presentation API and the Remote Playback API in an
+              interoperable fashion for browsers and presentation displays
+              connected via the same local area network.
+            </p>
+            <p class="draft-status"> <b>Draft state:</b> <a href="https://webscreens.github.io/openscreenprotocol/">
+                Adopted from the Second Screen Community Group</a></p>
+            <p class="milestone">
+              <b>Expected completion:</b> Q2 2021
+            </p>
+          </dd>
         </dl>
-        <p> The Working Group may decide to group the API functions in one or
-          more specifications. </p>
+        <p> The Working Group may decide to group the API and protocol suite
+          in one or more specifications. </p>
         <h3 id="other-deliverables"> Other Deliverables </h3>
         <dl>
           <dt id="test-suite"> Test suite </dt>
@@ -388,18 +418,16 @@
       <div class="dependencies">
         <h2 id="coordination"> Dependencies and Liaisons </h2>
         <h3 id="dependencies"> Dependencies </h3>
-        <p> The initial draft of the Presentation API was prepared by the
-          <a href="https://www.w3.org/community/webscreens/">Second
+        <p> The initial drafts of the Presentation API and of the Open Screen
+          Protocol were prepared by the
+          <a href="http://www.w3.org/community/webscreens/">Second
             Screen Community Group</a>. Upon approval of the Working Group, the
-          Community Group ceased its work on the Presentation API
-          specification. The Community Group is currently focused on incubating
-          the <a href="https://github.com/webscreens/openscreenprotocol">Open
-          Screen Protocol</a>, an open set of network protocols that includes
-          authentication and security mechanisms, for the APIs defined in this
-          Working Group. The
-          Community Group may also work on other related deliverables where it
+          Community Group ceased its work on the Presentation API and the core
+          Open Screen Protocol specifications.
+          The Community Group may work on other related deliverables where it
           is not clear enough how to proceed for it to be a work item for a
-          Working Group. The Community Group is only one possible source for
+          Working Group, including on extensions to the Open Screen Protocol.
+          The Community Group is only one possible source for
           work under future Working Group charters, but can serve to do initial
           exploration for some future work items. </p>
         <p> The specifications produced by this Working Group adhere to the
@@ -431,12 +459,11 @@
           <dt><a href="https://www.w3.org/community/webscreens/" id="sspcg">
               Second Screen Community Group </a></dt>
           <dd> This group developed the initial version of the Presentation API
-            and focuses on enabling interoperability among implementations of
+            and of the Open Screen Protocol, and focuses on enabling
+            interoperability among implementations of
             the second screen APIs, encouraging implementation of the the APIs
             by browser vendors and establishing complementary specifications for
-            the APIs. The Community Group incubates the
-            <a href="https://github.com/webscreens/openscreenprotocol">Open
-            Screen Protocol</a> for the APIs defined in this Working Group.
+            the APIs.
           </dd>
           <dt><a id="wai" href="https://www.w3.org/WAI/"> </a><a href="https://www.w3.org/WAI/APA/">Accessible
               Platform Architectures (APA) Working Group</a> </dt>
@@ -460,13 +487,30 @@
         <h3 id="external-groups"> External Groups </h3>
         <p> While the Presentation API does not have a direct dependency on any
           given set of protocols, the following is a tentative list of external
-          bodies the Working Group should collaborate with to allow the
-          Presentation API to be implemented on top of widely deployed
-          attachment methods for connected displays: </p>
+          bodies the Working Group should collaborate with to develop the Open
+          Screen Protocol and allow the Presentation API and Remote Playback API
+          to be implemented on top of widely deployed attachment methods for
+        connected displays: </p>
         <dl>
           <dt><a href="https://www.ietf.org" id="ietf">IETF</a></dt>
-          <dd> The IETF develops home network protocols that presentation displays
-            may support. </dd>
+          <dd> The IETF develops network protocols that presentation displays
+            may support, and form the core of the Open Screen Protocol. The
+            Second Screen Working Group will liaise with relevant groups at IETF
+            to guarantee proper and secure application of IETF protocols within
+            the Open Screen Protocol. These groups include
+            <a href=
+            "https://datatracker.ietf.org/wg/dnssd/documents/">Extensions for
+            Scalable DNS Service Discovery</a>, <a href=
+            "https://datatracker.ietf.org/wg/quic/documents/">QUIC</a>, <a href=
+            "https://datatracker.ietf.org/wg/tls/documents/">Transport Layer
+            Security</a> (TLS), <a href=
+            "https://datatracker.ietf.org/rg/cfrg/documents/">Crypto Forum</a>,
+            and <a href="https://datatracker.ietf.org/wg/cbor/">Concise Binary
+            Object Representation Maintenance and Extensions</a>. The Second
+            Screen Working Group will also liaise with IETF to assess whether
+            parts of the Open Screen Protocol apply to broader scenarios than
+            the ones envisioned for the APIs. Those parts may be developed
+            further in the IETF. </dd>
           <dt><a href="https://openconnectivity.org/">Open Connectivity Foundation</a></dt>
           <dd> The Open Connectivity Foundation develops home network protocols that presentation
             displays may support, including the UPnP suite of protocols. </dd>
@@ -628,8 +672,8 @@
                 <td> End date adjusted </td>
               </tr>
               <tr>
-                <th> <a href="#">Rechartered</a> </th>
-                <td> <span class="todo">15 January 2018</span> </td>
+                <th> <a href="https://www.w3.org/2014/secondscreen/charter-2018.html">Rechartered</a> </th>
+                <td> 2 February 2018 </td>
                 <td> 31 December 2019 </td>
                 <td>
                   <ul>
@@ -649,6 +693,21 @@
                     <li>Added "test as you commit" approach</li>
                     <li>Adjusted group names in liaisons section
                       accordingly</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th> <a href="#">Rechartered</a> </th>
+                <td> <span class="todo">1 January 2020</span> </td>
+                <td> 31 December 2021 </td>
+                <td>
+                  <ul>
+                    <li>Replaced the term "screen" by "presentation display" for consistency with the APIs</li>
+                    <li>Put presentation of parts of an HTML document in scope of the Working Group</li>
+                    <li>Put the standardization of a protocol suite for the APIs in scope of the Working Group</li>
+                    <li>Added the Open Screen Protocol deliverable accordingly</li>
+                    <li>Listed relevant IETF group for the Open Screen Protocol in the liaisons section</li>
+                    <li>A few editorial updates</li>
                   </ul>
                 </td>
               </tr>
