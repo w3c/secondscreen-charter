@@ -55,7 +55,7 @@
           </tr>
           <tr>
             <th rowspan="1" colspan="1"> Team Contacts</th>
-            <td rowspan="1" colspan="1"> François Daoust (0.2 FTE)</td>
+            <td rowspan="1" colspan="1"> François Daoust (0.1 FTE)</td>
           </tr>
           <tr>
             <th rowspan="1" colspan="1"> Meeting Schedule </th>
@@ -79,7 +79,7 @@
           available in the local environment, attached by wired connections or
           remotely with wireless, peer-to-peer media. </p>
         <p> Common attachment methods include video ports like VGA, DisplayPort
-          or HDMI, or wirelessly through Miracast, WiDi, AirPlay, Bluetooth, and
+          or HDMI, or via wireless protocols such as  Miracast, WiDi, AirPlay, Bluetooth, and
           Google Cast.  Wireless presentation displays may be available on a
           local area network, or over the Internet (brokered by a cloud
           service).  In addition to displays like monitors and TVs, wireless
@@ -92,7 +92,8 @@
           presentation displays without having to know the details of the
           connection technology. </p>
         <p> The Second Screen Working Group aims at defining simple APIs and an
-          open suite of network protocols that allow web applications to present
+          open suite of network protocols (specified as an application of
+          existing IETF protocols) that allow web applications to present
           and control web content on one or more presentation displays and
           speakers. </p>
       </div>
@@ -104,7 +105,7 @@
           application to request display of web content on a nearby presentation
           display, with a means to communicate with and control the web content
           from the initiating page and other authorized pages;</li>
-          <li>A suite of network protocols that allows user agents to implement
+          <li>A suite of network protocols that allow user agents to implement
           the APIs in an interoperable fashion for browsers and presentation
           displays connected via the same local area network.</li>
         </ul>
@@ -117,7 +118,7 @@
           display.  Web content may comprise an HTML document; parts of an HTML
           document; web media types such as images, audio, video; or
           application-specific media.  The presentation of application-specific
-          media is known to the controlling page and the presentation display,
+          media is known to the controlling user agent and the presentation display,
           but not necessarily to a generic HTML user agent. </p>
         <p> For a requested piece of web content, the user agent is responsible
           for determining which presentation displays are compatible with that
@@ -148,7 +149,7 @@
           configure existing IETF protocols for each of these steps. This
           Working Group will work with the IETF to assess whether parts of the
           protocol suite may apply to broader scenarios than the ones envisioned
-          for the APIs. If that is the case, those parts will be further
+          for the APIs. If that is the case, those parts may be further
           developed in the IETF. </p>
         <p> This Working Group will not mandate network protocols for sharing
           web content between user agents and presentation displays. The APIs
@@ -201,7 +202,7 @@
           specifications: </p>
         <dl>
           <dt> <a href="https://www.w3.org/TR/presentation-api/">Presentation
-              API</a> </dt>
+              API</a></dt>
           <dd>
             <p> An API that allows a web application to request display of web
               content on a connected display, with a means to communicate with
@@ -218,7 +219,13 @@
               multiple presentation displays before moving the specification to
               Proposed Recommendation.
             </p>
-
+            <p>
+              <b>Reference Draft:</b>
+              <a href="https://www.w3.org/TR/2017/CR-presentation-api-20170601/">https://www.w3.org/TR/2017/CR-presentation-api-20170601/</a><br>
+              Associated <a href="https://lists.w3.org/Archives/Member/member-cfe/2017Oct/0005.html">Call for Exclusion</a>
+              on 19 October 2017 ended on 31 July 2017<br>
+              Produced under Working Group Charter: https://www.w3.org/2014/secondscreen/charter-2016.html
+            </p>
             <p>
               The <a href="https://github.com/webscreens/openscreenprotocol">
               Open Screen Protocol</a> will be the basis for demonstrating
@@ -257,7 +264,7 @@
             
           </dd>
           <dt> <a href="https://www.w3.org/TR/remote-playback/">Remote Playback
-              API</a> </dt>
+              API</a></dt>
           <dd>
             <p> An API that allows a web application to request display of media
               content on a connected display, with a means to control the remote
@@ -268,6 +275,13 @@
               <b>Expected completion:</b> Q4 2020 &mdash; The Working Group
               plans to publish the Remote Playback API as a final Recommendation
               when the Success Criteria are met.
+            </p>
+            <p>
+              <b>Reference Draft:</b>
+              <a href="https://www.w3.org/TR/2017/CR-remote-playback-20171019/">https://www.w3.org/TR/2017/CR-remote-playback-20171019/</a><br>
+              Associated <a href="https://lists.w3.org/Archives/Member/member-cfe/2017Oct/0005.html">Call for Exclusion</a>
+              on 19 October 2017 ended on 18 December 2017<br>
+              Produced under Working Group Charter: https://www.w3.org/2014/secondscreen/charter-2016.html
             </p>
             <p>
               Additional features will be considered for the Remote Playback API
@@ -388,6 +402,13 @@
               <td class="PR" rowspan="1" colspan="1"> <em>Q4 2020</em> </td>
               <td class="REC" rowspan="1" colspan="1"> <em>Q4 2020</em> </td>
             </tr>
+            <tr>
+              <th rowspan="1" colspan="1"> Open Screen Protocol </th>
+              <td class="WD1" rowspan="1" colspan="1"> Q1 2020 </td>
+              <td class="CR" rowspan="1" colspan="1"> Q4 2020 </td>
+              <td class="PR" rowspan="1" colspan="1"> <em>Q2 2021</em> </td>
+              <td class="REC" rowspan="1" colspan="1"> <em>Q2 2021</em> </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -407,7 +428,11 @@
           security and privacy considerations. Specifically, the user must
           always be in control of privacy-sensitive information that may be
           conveyed through the APIs, such as the visibility or access to
-          presentation displays, or the URLs of the web content to be presented. </p>
+          presentation displays, or the URLs of the web content to be presented.
+          Specifications should also avoid unnecessary or severe increases to
+          fingerprinting surface, especially for
+          <a href="https://www.w3.org/TR/fingerprinting-guidance/#dfn-passive-fingerprinting">passive
+          fingerprinting</a>.</p>
         <p>
           This Working Group will follow a <a
           href="https://www.w3.org/2019/02/testing-policy.html">test
@@ -431,11 +456,9 @@
           work under future Working Group charters, but can serve to do initial
           exploration for some future work items. </p>
         <p> The specifications produced by this Working Group adhere to the
-          web's security model defined in the HTML specification published by
-          the Web Platform Working Group. </p>
+          web's origin-based security model. </p>
         <p> Common web technologies that this Working Group could refer to for
-          messaging include Web Messaging and the Web Socket API defined by the
-          Web Platform Working Group. </p>
+          messaging include Web Messaging and the Web Socket API. </p>
         <p> No external dependencies against the specifications of this Working
           Group have been identified. </p>
         <h3 id="liaisons"> Liaisons </h3>
@@ -546,9 +569,11 @@
         <div class="communication">
           <h2 id="communication"> Communication </h2>
           <p> Teleconferences will be conducted on an as-needed basis. </p>
-          <p> This group primarily conducts its work on the public mailing list
-            <a href="https://lists.w3.org/Archives/Public/public-secondscreen/">public-secondscreen@w3.org</a>.
-            Administrative tasks may be conducted in Member-only communications.
+          <p> This group primarily conducts its technical work on GitHub. The
+            public mailing list
+            <a href="https://lists.w3.org/Archives/Public/public-secondscreen/">public-secondscreen@w3.org</a>
+            is used for calls for consensus. Administrative tasks may be
+            conducted in Member-only communications.
           </p>
           <p> Information about the group (deliverables, participants,
             face-to-face meetings, teleconferences, etc.) is available from the
