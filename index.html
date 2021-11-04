@@ -115,7 +115,7 @@
               <br />
               IRC: active participants use the
               <a href="irc://irc.w3.org:6665/#webscreens">#webscreens</a> W3C
-              IRC channel during F2F meetings and videoonferences. </td>
+              IRC channel during F2F meetings and videoconferences. </td>
           </tr>
         </tbody>
         </table>
@@ -134,8 +134,10 @@
           Bluetooth, and Google Cast.  Networked presentation displays may be
           available on a local area network or over the Internet. In addition to
           displays like monitors and TVs, wireless speakers can serve as
-          secondary devices for rendering Web content. General purpose PCs and
-          laptops can also serve as secondary presentation displays. </p>
+          secondary devices for rendering Web content.  (For the purposes of
+          this charter, "presentation displays" includes wireless speakers as
+          well.) General purpose PCs and laptops can also serve as secondary
+          presentation displays. </p>
         <p> For many of these displays, the operating system hides how the
           display is attached and provides ways for native applications to
           render media on them.  Native applications can easily use additional
@@ -171,10 +173,11 @@
           application-specific media.  The presentation of application-specific
           media is known to the controlling user agent and the presentation
           display, but not necessarily to a generic HTML user agent. </p>
-        <p> For a requested piece of web content, the API will provide the means
-          for the web application to identify whether rendering the web content
-          is likely to be successful, i.e. whether a presentation display is
-          available that is capable of rendering the web content.</p>
+        <p> For a requested piece of web content, the user agent will provide
+          the means for the web application to identify whether rendering the
+          web content on a networked presentation display is likely to be
+          successful, i.e. whether a presentation display is available that is
+          capable of rendering the web content.</p>
         <p> The APIs are agnostic with regard to the display technology used.
           The user agent may ask the presentation display itself to render the
           web content, or the user agent may render the web content itself and
@@ -212,10 +215,30 @@
           conveyed through the APIs, such as the visibility or access to
           presentation displays, or the URLs of the web content to be
           presented. </p>
+        <p> The scope of this Working Group is to also define APIs that allow
+          scripts to query the device for information about connected displays
+          and to position windows relative to those displays. </p>
+        <p> Operating systems generally allow users to connect multiple screens
+          to a single device and arrange them virtually to extend the overall
+          visual workspace. A variety of applications use platform tools to
+          place windows in such multi-screen environments, but web application
+          developers are limited by existing APIs, which were generally designed
+          around the use of a single screen. </p>
+        <p> The APIs in scope will allow:
+          <ul>
+            <li>to detect if the computer system has more than one connected
+              screen, </li>
+            <li> to detect when screen properties change across connected
+              screens, </li>
+            <li> request screen information required to facilitates window
+              placement across screens, </li>
+            <li> show elements fullscreen on a specific screen, and place
+              windows on a specific screen. </li>
+          </ul>
+        </p>
         <p> Members of the Working Group should review other Working Groups'
           deliverables that are identified as being relevant to the Working
           Group's mission. </p>
-
         <section id="out-of-scope">
           <h3> Out of Scope </h3>
           <p> The specifications defined by this Working Group abstract away the
@@ -338,7 +361,7 @@
               </p>
               <p class="milestone">
                 <b>Expected completion:</b> The Working Group plans to publish
-                the Multi-Screen Window Placement API as a final Recommendation
+                the Multi-Screen Window Placement as a final Recommendation
                 when its Success Criteria are met.  The timeline for this
                 charter proposes that the specification reach Candidate
                 Recommendation by Q4 2023.
@@ -488,7 +511,7 @@
                 <td class="REC" rowspan="1" colspan="1"> <em>Q4 2022</em> </td>
               </tr>
               <tr>
-                <th rowspan="1" colspan="1"> Multi-Screen Window Placement </th>
+                <th rowspan="1" colspan="1"> Multi-Screen Window Placement</th>
                 <td class="WD1" rowspan="1" colspan="1"> Q4 2022 </td>
                 <td class="CR" rowspan="1" colspan="1"> Q4 2023 </td>
                 <td class="PR" rowspan="1" colspan="1"> <em> - </em> </td>
@@ -587,7 +610,7 @@
             <dt><a href="https://www.w3.org/community/webscreens/" id="sspcg">
                 Second Screen Community Group </a></dt>
             <dd> This group developed the initial version of the Presentation
-              API, the Open Screen Protocol, and Multi Screen Window
+              API, the Open Screen Protocol, and Multi-Screen Window
               Placement. The Community Group focuses on enabling
               interoperability among implementations of the second screen APIs,
               encouraging implementation of the the APIs by browser vendors and
@@ -618,7 +641,7 @@
               Module</a> which defines extensions to
               the <a href="https://drafts.csswg.org/cssom-view/#extensions-to-the-window-interface">
                 Window interface</a> that expose screen information to web applications.
-              The Multi-Screen Window Placement API proposes new extensions to this interface.
+              Multi-Screen Window Placement proposes new extensions to this interface.
             </dd> 
           </dl>
         </section>
@@ -657,7 +680,7 @@
               <a href="https://html.spec.whatwg.org/#htmlmediaelement"><code>HTMLMediaElement</code></a>
               interface that the Remote Playback API specification extends.
               This group also maintains the <a href="https://fullscreen.spec.whatwg.org/">Fullscreen
-              API</a> specification; the Multi-Screen Window Placement API
+              API</a> specification; Multi-Screen Window Placement
               proposes an extension to the Fullscreen API.
             </dd>
           </dl>
