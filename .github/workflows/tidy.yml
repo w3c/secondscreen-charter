@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: brew install tidy-html5
-      - run: tidy -config build/tidyconfig.txt -o index.html index.html
+      - run: tidy -ashtml -config build/tidyconfig.txt -o index.html index.html
       - uses: peter-evans/create-pull-request@v3
         with:
           title: "Tidy using tidy-html5"
