@@ -7,10 +7,9 @@
     </title>
     <link rel="stylesheet" href="https://www.w3.org/2005/10/w3cdoc.css" type="text/css" media=
     "screen" />
-    <link rel="stylesheet" type="text/css" href="https://www.w3.org/Guide/pubrules-style.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.w3.org/OldGuide/pubrules-style.css" />
     <link rel="stylesheet" type="text/css" href="https://www.w3.org/2006/02/charter-style.css" />
     <style>
-    <![CDATA[
       main {
         max-width: 60em;
         margin: 0 auto;
@@ -32,7 +31,7 @@
         font-weight: bold;
       }
 
-      ul.out-of-scope > li > ul > li{
+      ul.out-of-scope > li > ul > li {
         font-weight: normal;
       }
 
@@ -48,7 +47,6 @@
       footer {
         font-size: small;
       }
-    ]]>
     </style>
   </head>
   <body>
@@ -114,7 +112,7 @@
           Group</a>
         </p>
       </div>
-      <section id="details">
+      <div id="details">
         <table class="summary-table">
           <tbody>
             <tr id="Duration">
@@ -122,7 +120,7 @@
                 Start date
               </th>
               <td rowspan="1" colspan="1">
-                <i class="todo">@@ January 2022</i>
+                <i class="todo">@@ 2024</i>
               </td>
             </tr>
             <tr>
@@ -130,7 +128,7 @@
                 End date
               </th>
               <td rowspan="1" colspan="1">
-                31 January 2024
+                31 January 2026
               </td>
             </tr>
             <tr>
@@ -173,7 +171,7 @@
             </tr>
           </tbody>
         </table>
-      </section>
+      </div>
       <section id="background" class="background">
         <h2>
           Background
@@ -688,26 +686,32 @@
           "Proposed Recommendation">Proposed Recommendation</a>, each normative specification is
           expected to have <a href=
           "https://www.w3.org/Consortium/Process/#implementation-experience">at least two
-          independent implementations</a> of every feature defined in the specification.
-        </p>
-        <p>
-          To advance to Proposed Recommendation, interoperability between the independent
-          implementations should be demonstrated. Interoperable user agents hosting the same
+          independent implementations</a> of every feature defined in the specification, where
+          interoperability can be verified by passing open test suites, and two or more
+          implementations interoperating with each other. In order to advance to Proposed
+          Recommendation, each normative specification must have an open test suite of every
+          feature defined in the specification. Interoperable user agents hosting the same
           Presentation API web application should be able to render the same content with the same
           functionality on supported presentation displays that are compatible with the content to
           render.
         </p>
         <p>
-          Each specification should contain separate sections detailing all known security and
-          privacy implications for implementers, Web authors, and end users. Specifically, the user
-          must always be in control of privacy-sensitive information that may be conveyed through
-          the APIs, such as the visibility or access to presentation displays, or the URLs of the
-          web content to be presented. Specifications should minimize and mitigate their <a href=
-          "https://www.w3.org/TR/fingerprinting-guidance/#dfn-fingerprinting-surface">fingerprinting
-          surfaces</a>.
+          There should be testing plans for each specification, starting from the earliest drafts.
         </p>
         <p>
-          There should be testing plans for each specification, starting from the earliest drafts.
+          To promote interoperability, all changes made to specifications should have <a href=
+          "https://www.w3.org/2019/02/testing-policy.html">tests</a>. Testing efforts should be
+          conducted via the <a href="https://github.com/web-platform-tests/wpt">Web Platform
+          Tests</a> project.
+        </p>
+        <p>
+          Each specification should contain sections detailing all known security and privacy
+          implications for implementers, Web authors, and end users. Specifically, the user must
+          always be in control of privacy-sensitive information that may be conveyed through the
+          APIs, such as the visibility or access to presentation displays, or the URLs of the web
+          content to be presented. Specifications should minimize and mitigate their <a href=
+          "https://www.w3.org/TR/fingerprinting-guidance/#dfn-fingerprinting-surface">fingerprinting
+          surfaces</a>.
         </p>
         <p>
           Each specification should contain a section on accessibility that describes the benefits
@@ -715,8 +719,8 @@
           recommendations for maximising accessibility in implementations.
         </p>
         <p>
-          To promote interoperability, all changes made to specifications should have <a href=
-          'https://www.w3.org/2019/02/testing-policy.html'>tests</a>.
+          This Working Group expects to follow the TAG <a href=
+          "https://www.w3.org/TR/design-principles/">Web Platform Design Principles</a>.
         </p>
       </section>
       <section id="coordination">
@@ -752,11 +756,11 @@
         <p>
           For all specifications, this Working Group will seek <a href=
           "https://www.w3.org/Guide/documentreview/#how_to_get_horizontal_review">horizontal
-          review</a> for accessibility, internationalization, performance, privacy, and security
-          with the relevant Working and Interest Groups, and with the <a href=
-          "https://www.w3.org/2001/tag/" title="Technical Architecture Group">TAG</a>. Invitation
-          for review must be issued during each major standards-track document transition,
-          including <a href="https://www.w3.org/Consortium/Process/#RecsWD" title=
+          review</a> for accessibility, internationalization, privacy, and security with the
+          relevant Working and Interest Groups, and with the <a href="https://www.w3.org/2001/tag/"
+          title="Technical Architecture Group">TAG</a>. Invitation for review must be issued during
+          each major standards-track document transition, including <a href=
+          "https://www.w3.org/Consortium/Process/#RecsWD" title=
           "First Public Working Draft">FPWD</a>. The Working Group is encouraged to engage
           collaboratively with the horizontal review groups throughout development of each
           specification. The Working Group is advised to seek a review at least 3 months before
@@ -943,8 +947,8 @@
         </p>
         <p>
           This group primarily conducts its technical work on <a id="public-github" href=
-          "https://github.com/w3c/secondscreen-wg">GitHub issues</a>. The public mailing list
-          <a href=
+          "https://github.com/w3c/secondscreen-wg">GitHub issues</a>. The public is invited to
+          review, discuss and contribute to this work. The public mailing list <a href=
           "https://lists.w3.org/Archives/Public/public-secondscreen/">public-secondscreen@w3.org</a>
           is used for calls for consensus.
         </p>
@@ -970,24 +974,19 @@
           after careful consideration of the range of views presented, the Chairs may call for a
           group vote and record a decision along with any objections.
         </p>
+
         <p>
           To afford asynchronous decisions and organizational deliberation, any resolution
           (including publication decisions) taken in a face-to-face meeting or teleconference will
-          be considered provisional.
-        </p>
-        <p>
-          A call for consensus (CfC) will be issued for all resolutions (for example, via email
-          and/or web-based survey), with a response period from one week to 10 working days,
-          depending on the chair's evaluation of the group consensus on the issue.
-        </p>
-        <p>
-          If no objections are raised by the end of the response period, the resolution will be
-          considered to have consensus as a resolution of the Working Group.
+          be considered provisional. A call for consensus (CfC) will be issued for all resolutions
+          (for example, via email, GitHub issue and/or web-based survey), with a response period
+          from one week to 10 working days, depending on the chair's evaluation of the group
+          consensus on the issue. If no objections are raised by the end of the response period,
+          the resolution will be considered to have consensus as a resolution of the Working Group.
         </p>
         <p>
           All decisions made by the group should be considered resolved unless and until new
-          information becomes available, or unless reopened at the discretion of the Chairs or the
-          Director.
+          information becomes available, or unless reopened at the discretion of the Chairs.
         </p>
         <p>
           This charter is written in accordance with the <a href=
@@ -1234,10 +1233,10 @@
               </tr>
               <tr>
                 <th>
-                  <a href="#">Rechartered</a>
+                  <a href="https://www.w3.org/2022/03/charter-secondscreen-wg.html">Rechartered</a>
                 </th>
                 <td>
-                  <span class="todo">@@</span>
+                  24 March 2022
                 </td>
                 <td>
                   31 January 2024
@@ -1273,18 +1272,13 @@
         <a href="mailto:fd@w3.org">François Daoust</a>
       </address>
       <p class="copyright">
-        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2021
-        <a href="https://www.w3.org/"><abbr title=
-        "World Wide Web Consortium">W3C</abbr></a><sup>®</sup> ( <a href=
-        "https://www.csail.mit.edu/"><abbr title=
-        "Massachusetts Institute of Technology">MIT</abbr></a>, <a href=
-        "https://www.ercim.eu/"><abbr title=
-        "European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href=
-        "https://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn/">Beihang</a> ), All
-        Rights Reserved. <abbr title="World Wide Web Consortium">W3C</abbr> <a href=
+        Copyright © 2024 <a href="https://www.w3.org/">World Wide Web Consortium</a>.<br />
+        <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup> <a href=
         "https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href=
-        "https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href=
-        "https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.
+        "https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel=
+        "license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document"
+        title="W3C Software and Document Notice and License">permissive document license</a> rules
+        apply.
       </p>
     </footer>
   </body>
