@@ -187,9 +187,8 @@
         </p>
         <p>
           The Second Screen Working Group aims at defining simple APIs for presenting content on
-          presentation displays, and an open suite of network protocols (specified as an
-          application of existing IETF protocols) that allow web applications to present and
-          control web content on networked presentation displays and speakers.
+          presentation displays, and an open application protocol that allows web applications to
+          present and control web content on networked presentation displays and speakers.
         </p>
       </section>
       <section id="scope" class="scope">
@@ -204,9 +203,8 @@
           displays, with a means to communicate with and control the web content from the
           initiating page and other authorized pages;
           </li>
-          <li>A suite of network protocols that allow user agents to implement the APIs in an
-          interoperable fashion for browsers and presentation displays connected via the same local
-          area network.
+          <li>An application protocol that allows user agents to implement the APIs in an
+          interoperable fashion for connected browsers and presentation displays.
           </li>
         </ul>
         <p>
@@ -244,19 +242,18 @@
           this group.
         </p>
         <p>
-          To allow the interoperable use of networked presentation displays, the suite of network
-          protocols will cover required steps for two user agents to implement APIs to use
-          networked displays: discovery, authentication, transport, and messaging (including API
-          control messages and messages for streaming media between agents). The suite will reuse
-          and configure existing IETF protocols for each of these steps. This Working Group will
-          work with the IETF to assess whether parts of the protocol suite may apply to broader
-          scenarios than the ones envisioned for the APIs. If that is the case, those parts may be
-          further developed in the IETF.
+          To allow the interoperable use of networked presentation displays, the application
+          protocol will cover messaging required for two user agents that implement APIs to use
+          networked displays (including API control messages and messages for streaming media
+          between agents). The application protocol suite is intended to be supported by a variety
+          of connection technologies between browsers and devices. There are specific requirements
+          to allow browsers and devices to discover and authenticate to one another, but these
+          requirements may be met by multiple possible implementations.
         </p>
         <p>
           This Working Group will not mandate network protocols for sharing web content between
-          user agents and presentation displays. The APIs will informatively reference the protocol
-          suite.
+          user agents and presentation displays. The APIs will informatively reference the
+          application protocol.
         </p>
         <p>
           The specifications produced by this Working Group will include security and privacy
@@ -313,13 +310,16 @@
             </li>
           </ul>
           <p>
-            This Working Group will reuse and configure existing network protocols to create an
-            open suite of network protocols suitable for the APIs. As such, the following are out
-            of scope for the Working Group:
+            This Working Group will reuse and configure existing network protocols to establish a
+            connection between user agents. As such, the following are out of scope for the Working
+            Group:
           </p>
           <ul>
-            <li>Any new feature in existing IETF protocols normatively referenced by the suite of
-            network protocols;
+            <li>Any application of existing protocols to establish a secure network transport
+            between user agents.
+            </li>
+            <li>Any new feature in existing IETF protocols normatively referenced by the
+            application protocol;
             </li>
             <li>Any new protocol for discovery, authentication, transport and messaging;
             </li>
